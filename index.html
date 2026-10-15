@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder - SKL 2</title>
+    <!-- Hubungkan ke CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="container header-content">
+            <h1>🍳 Recipe Finder</h1>
+            <nav>
+                <button id="btn-home" class="active">Beranda</button>
+                <button id="btn-favorites">Favorit (<span id="fav-count">0</span>)</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="container">
+        
+        <!-- Bagian Pencarian & Filter (Hanya tampil di Beranda) -->
+        <section id="search-filter-section" class="controls">
+            <input type="text" id="search-input" placeholder="Cari resep berdasarkan nama...">
+            <select id="filter-tag">
+                <option value="">Semua Kategori</option>
+                <!-- Opsi tag akan diisi otomatis lewat JavaScript -->
+            </select>
+        </section>
+
+        <!-- Daftar Resep / Kartu Resep -->
+        <section id="recipe-container" class="recipe-grid">
+            <!-- Kartu resep akan dimuat secara dinamis di sini -->
+            <p class="loading-text">Memuat resep...</p>
+        </section>
+
+        <!-- Bagian Detail Resep (Awalnya Disembunyikan) -->
+        <section id="recipe-detail-section" class="detail-container hidden">
+            <button id="btn-back" class="btn-secondary">← Kembali ke Daftar</button>
+            <div id="detail-content">
+                <!-- Detail resep dimuat di sini -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Recipe Finder Project. Dibuat untuk SKL 2 Semester 1.</p>
+    </footer>
+
+    <!-- Hubungkan ke JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

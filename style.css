@@ -1,0 +1,228 @@
+/* Pengaturan Dasar & Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+header nav button.active, header nav button:hover {
+    background-color: white;
+    color: #ff6b6b;
+}
+
+/* Kontrol Pencarian & Filter */
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.controls input, .controls select {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.controls input {
+    flex: 2;
+}
+
+.controls select {
+    flex: 1;
+}
+
+/* Grid Kartu Resep */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-4px);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.recipe-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.recipe-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Tombol Kartu */
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    flex: 1;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #ff5252;
+}
+
+.btn-fav {
+    background-color: #eee;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-fav.active {
+    color: #ff6b6b;
+}
+
+/* Bagian Detail Resep */
+.detail-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.detail-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.detail-header img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.detail-info h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.ingredients-list, .instructions-list {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.ingredients-list li, .instructions-list li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Utility Class */
+.hidden {
+    display: none !important;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+    }
+    .detail-header {
+        flex-direction: column;
+    }
+}
